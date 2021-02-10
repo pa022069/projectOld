@@ -1,0 +1,31 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "watch": "webpack --mode development --watch",
+    "start": "webpack --mode development",
+    "deploy": "webpack --mode production",
+    "build": "webpack"
+  },
+  "author": "jeffreywu",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "gsap": "^3.4.2",
+    "jquery": "^3.5.1",
+    "react": "^17.0.1",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "file-loader": "^6.1.1",
+    "image-webpack-loader": "^7.0.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}

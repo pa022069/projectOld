@@ -1,0 +1,19 @@
+1. build webpack function => npm run build
+2. save and build webpack function => npm run watch
+3. vscode setting => 
+{
+    "liveServer.settings.donotShowInfoMsg": true,
+    "autoprefixer.formatOnSave": true,
+    "html.format.unformatted": "br",
+    "easysass.excludeRegex": "^+",
+    "easysass.compileAfterSave": false,
+    "window.zoomLevel": 0,
+    "liveSassCompile.settings.formats": [
+        {
+            "extensionName": ".min.css",
+            "format": "compressed",
+            "savePath": "./dist/css"
+        }
+    ],
+    "explorer.confirmDragAndDrop": false,
+}

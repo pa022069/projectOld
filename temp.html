@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="component">
+        <div class="type">
+            <label>
+                <input type="radio" name="type" value="text" checked> 文字
+            </label>
+            <label>
+                <input type="radio" name="type" value="button"> 按鈕
+            </label>
+            <label>
+                <input type="radio" name="type" value="image"> 圖片
+            </label>
+            <label>
+                <input type="radio" name="type" value="video"> 影片
+            </label>
+            <label>
+                <input type="radio" name="type" value="carousel"> 圖卡樣板
+            </label>
+            <label>
+                <input type="radio" name="type" value="image_carousel"> 圖片樣板
+            </label>
+            <label>
+                <input type="radio" name="type" value="imagemap"> imagemap
+            </label>
+        </div>
+        <div class="type__info">
+            <!-- 文字 -->
+            <div id="type--text">
+                <div class="type__row">
+                    <label for="text">文字內容</label>
+                    <textarea name="text" id="text" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <!-- 按鈕 -->
+            <div id="type--button">
+                <div class="type__row">
+                    <label for="preview">預覽訊息</label>
+                    <input type="text" name="preview" id="preview">
+                </div>
+                <div class="type__row">
+                    <label for="title">標題</label>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div class="type__row">
+                    <label for="content">內文</label>
+                    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                </div>
+                <div class="type__component">
+                    <div class="type__row">
+                        <label for="title">按鈕標題</label>
+                        <input type="text" name="title" id="title">
+                    </div>
+                    <div class="type__row">
+                        <label for="action">按鈕動作</label>
+                        <select name="action" id="action">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                        </select>
+                    </div>
+                    <div class="type__row">
+                        <label for="response">按鈕回復文字</label>
+                        <input type="text" name="response" id="response">
+                    </div>
+                </div>
+            </div>
+            <!-- 圖片 -->
+            <div id="type--image">
+                <div class="type__row">
+                    <input type="file" accept="image/jpeg, image/png">
+                </div>
+            </div>
+            <!-- 影片 -->
+            <div id="type--video">
+                <div class="type__row">
+                    <input type="file" accept="image/jpeg, image/png">
+                </div>
+                <div class="type__row">
+                    <input type="file" accept="video/mp4">
+                </div>
+            </div>
+            <!-- 圖卡樣板 -->
+            <div id="type--topic">
+                <div class="type__row">
+                    <label for="preview">預覽訊息</label>
+                    <input type="text" name="preview" id="preview">
+                </div>
+                <div class="type__row">
+                    <label for="btnCounter">按鈕數量</label>
+                    <select name="btnCounter" id="btnCounter">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                    </select>
+                </div>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+                <div class="type__component">
+                    <div class="type__row">
+                        <input type="file" accept="image/jpeg, image/png">
+                    </div>
+                    <div class="type__row">
+                        <label for="title">圖卡1標題</label>
+                        <input type="text" name="title" id="title">
+                    </div>
+                    <div class="type__row">
+                        <label for="content">圖卡1內文</label>
+                        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="type__row">
+                        <label for="title">按鈕1標題</label>
+                        <input type="text" name="title" id="title">
+                    </div>
+                    <div class="type__row">
+                        <label for="action">按鈕1動作</label>
+                        <select name="action" id="action">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                        </select>
+                    </div>
+                    <div class="type__row">
+                        <label for="response">按鈕1回復文字</label>
+                        <input type="text" name="response" id="response">
+                    </div>
+                </div>
+            </div>
+            <!-- 圖卡樣板 -->
+            <div id="type--casoul">
+                <div class="type__row">
+                    <label for="preview">預覽訊息</label>
+                    <input type="text" name="preview" id="preview">
+                </div>
+                <div class="type__component">
+                    <div class="type__row">
+                        <input type="file" accept="image/jpeg, image/png">
+                    </div>
+                    <div class="type__row">
+                        <label for="title">圖卡1標題</label>
+                        <input type="text" name="title" id="title">
+                    </div>
+                    <div class="type__row">
+                        <label for="content">圖卡1內文</label>
+                        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="type__row">
+                        <label for="title">按鈕1標題</label>
+                        <input type="text" name="title" id="title">
+                    </div>
+                    <div class="type__row">
+                        <label for="action">按鈕1動作</label>
+                        <select name="action" id="action">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                        </select>
+                    </div>
+                    <div class="type__row">
+                        <label for="response">按鈕1回復文字</label>
+                        <input type="text" name="response" id="response">
+                    </div>
+                </div>
+            </div>
+            <!-- 圖卡樣板 -->
+            <div id="type--imagemap">
+                <div class="type__row">
+                    <label for="preview">預覽訊息</label>
+                    <input type="text" name="preview" id="preview">
+                </div>
+                <div class="type__row">
+                    <input type="file" accept="image/jpeg, image/png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

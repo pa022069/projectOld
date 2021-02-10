@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=640 ,user-scalable=no"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Meta -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta property="og:title" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website" />
+
+    <title>測試</title>
+
+    <!-- CSS -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Anton|Noto+Serif+TC&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="dist/css/all.min.css">
+
+    <!-- Favicon.ico -->
+    <link href="" rel="shortcut icon" />
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vconsole@3.2.0/dist/vconsole.min.js"></script>
+    <script>
+        var vConsole = new VConsole();
+    </script> -->
+
+    <!-- GA -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id="></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <layout :content="content"></layout>
+    </div>
+    <script src="dist/js/bundle.js"></script>
+    <script>
+        // 架構
+        Vue.component('layout', {
+            data() {
+                return {
+                    typeName: 'type-text'
+                }
+            },
+            methods: {
+                getEmit(name) {
+                    this.typeName = name;
+                },
+                submit() {
+                    console.log("SEND!");
+                }
+            },
+            template: `
+                <div>
+                    <type-select @emit-type="getEmit"></type-select>
+                    <form @submit.prevent="submit">
+                        <div class="type__info">
+                            <component :is="typeName"></component>
+                        </div>
+                        <button type="submit">送出</button>
+                    </form>
+                </div>
+            `
+        });
+        // 選單
+        Vue.component('type-select', {
+            data() {
+                return {
+                    value: 'type-text',
+                }
+            },
+            watch: {
+                value() {
+                    this.$emit('emit-type', this.value);
+                }
+            },
+            template: `
+                <div class="type">
+                    <label>
+                        <input type="radio" name="type" value="type-text" v-model="value" checked> 文字
+                    </label>
+                    <label>
+                        <input type="radio" name="type" value="type-button" v-model="value"> 按鈕
+                    </label>
+                    <label>
+                        <input type="radio" name="type" value="type-image" v-model="value"> 圖片
+                    </label>
+                    <label>
+                        <input type="radio" name="type" value="type-video" v-model="value"> 影片
+                    </label>
+                    <label>
+                        <input type="radio" name="type" value="type-carousel" v-model="value"> 圖卡樣板
+                    </label>
+                    <label>
+                        <input type="radio" name="type" value="type-image-carousel" v-model="value"> 圖片樣板
+                    </label>
+                    <label>
+                        <input type="radio" name="type" value="type-imagemap" v-model="value"> imagemap
+                    </label>
+                </div>
+            `
+        });
+
+        // 共同
+        Vue.component('input-preview', {
+            template: `
+                <div class="type__row">
+                    <label for="preview">預覽訊息</label>
+                    <input type="text" name="preview" id="preview">
+                </div>
+            `
+        });
+        Vue.component('input-title', {
+            template: `
+                <div class="type__row">
+                    <label for="title">標題</label>
+                    <input type="text" name="title" id="title">
+                </div>
+            `
+        });
+        Vue.component('input-content', {
+            template: `
+                <div class="type__row">
+                    <label for="content">內文</label>
+                    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                </div>
+            `
+        });
+        Vue.component('btn-component', {
+            template: `
+                <div class="type__component">
+                    <div class="type__row">
+                        <label for="title-btn">按鈕標題</label>
+                        <input type="text" name="title-btn" id="title-btn">
+                    </div>
+                    <div class="type__row">
+                        <label for="action-btn">按鈕動作</label>
+                        <select name="action-btn" id="action-btn">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                        </select>
+                    </div>
+                    <div class="type__row">
+                        <label for="response-btn">按鈕回復文字</label>
+                        <input type="text" name="response-btn" id="response-btn">
+                    </div>
+                </div>
+            `
+        });
+
+        // 類別
+        // 文字
+        Vue.component('type-text', {
+            template: `
+                <div class="type__row">
+                    <label for="text">文字內容</label>
+                    <textarea name="text" id="text" cols="30" rows="10"></textarea>
+                </div>
+            `
+        });
+        // 按鈕
+        Vue.component('type-button', {
+            template: `
+            <div id="type--button">
+                <input-preview></input-preview>
+                <input-title></input-title>
+                <input-content></input-content>
+                <btn-component></btn-component>
+            </div>
+            `
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                content: "type-text"
+            }
+        }); 
+    </script>
+</body>
+
+</html>
